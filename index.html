@@ -1,210 +1,404 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth bg-black">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | IT Support & Aspiring SOC Analyst</title>
+    <title>Marx Josef Rodriguez | OJT Applicant & IT Student</title>
+    
+    <!-- Security Headers (CSP & Anti-Clickjacking) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdn.jsdelivr.net https://api.web3forms.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; font-src 'self' https://cdn.jsdelivr.net; img-src 'self' data: https:;">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="tailwind.config.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            black: '#030712',      // Deep Obsidian Black
+                            card: '#0B0F19',       // Dark Stealth Card
+                            cardBorder: '#1E293B', // Sleek Slate Border
+                            blue: '#38BDF8',       // Soft Cyber Blue / Sky Accent
+                            blueDark: '#0284C7',   // Deep Blue Accent
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030712;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #38BDF8;
+        }
+    </style>
 </head>
-<body class="bg-brand-dark text-slate-200 font-sans antialiased selection:bg-brand-accent selection:text-brand-dark">
+<body class="bg-black text-slate-300 font-sans antialiased selection:bg-cyber-blue selection:text-black relative">
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-brand-dark/80 backdrop-blur-md z-50 border-b border-slate-800">
-        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            <span class="text-xl font-bold tracking-wider text-brand-accent">PORTFOLIO</span>
-            <div class="space-x-6 text-sm font-medium text-slate-400" id="nav-links">
-                <a href="#about" class="nav-item hover:text-brand-accent transition">About</a>
-                <a href="#projects" class="nav-item hover:text-brand-accent transition">Projects</a>
-                <a href="#certifications" class="nav-item hover:text-brand-accent transition">Certifications</a>
-                <a href="#contact" class="nav-item hover:text-brand-accent transition">Contact</a>
-            </div>
+    <!-- Subtle Cyber Grid Background Overlay -->
+    <div class="fixed inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20 pointer-events-none z-0"></div>
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-slate-900 px-6 py-4 transition-all">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="#hero" class="text-lg font-mono font-extrabold tracking-widest text-cyber-blue flex items-center gap-2">
+                <i class="bi bi-shield-lock-fill"></i>
+                <span class="text-white">&lt;MARX</span>.OJT/&gt;
+            </a>
+            
+            <nav class="hidden md:flex space-x-8 text-xs font-mono text-slate-400">
+                <a href="#about" class="hover:text-cyber-blue transition">// PROFILE</a>
+                <a href="#projects" class="hover:text-cyber-blue transition">// ACADEMIC_PROJECTS</a>
+                <a href="#skills" class="hover:text-cyber-blue transition">// SKILLS_&_GOALS</a>
+                <a href="#certs" class="hover:text-cyber-blue transition">// LEARNING</a>
+                <a href="#contact" class="hover:text-cyber-blue transition">// CONTACT</a>
+            </nav>
+
+            <a href="#contact" class="hidden sm:inline-flex items-center gap-2 bg-cyber-blue/10 text-cyber-blue border border-cyber-blue/30 px-4 py-2 rounded-xl text-xs font-mono font-bold hover:bg-cyber-blue hover:text-black transition">
+                <i class="bi bi-send"></i> APPLY_FOR_OJT()
+            </a>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="min-h-screen flex items-center pt-20 px-6 max-w-5xl mx-auto">
-        <div>
-            <div class="inline-block px-3 py-1 bg-brand-accent/10 text-brand-accent border border-brand-accent/20 rounded-full text-xs font-semibold uppercase tracking-widest mb-4">
-                IT Support • Aspiring SOC Analyst
+    <!-- SECTION 1: HERO -->
+    <section id="hero" class="relative z-10 min-h-screen flex items-center justify-center pt-24 pb-12 px-6">
+        <div class="max-w-5xl mx-auto w-full">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-cyber-blue/10 text-cyber-blue border border-cyber-blue/20 rounded-full text-xs font-mono font-semibold uppercase tracking-widest mb-6">
+                <span class="w-2 h-2 rounded-full bg-cyber-blue animate-ping"></span>
+                SEEKING OJT / INTERNSHIP OPPORTUNITY
             </div>
-            <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-4">
-                Securing Systems.<br>Optimizing User Experience.
+
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-4 leading-none">
+                Marx Josef <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-blue to-blue-500">Rodriguez</span>
             </h1>
-            <p class="text-slate-400 text-lg md:text-xl max-w-2xl mb-8 leading-relaxed">
-                IT professional with a strong foundation in Full Stack concepts, UI/UX optimization, and password security implementation. Focused on business transaction flows and continuous upskilling in threat analysis and response.
-            </p>
-            <div class="flex flex-wrap gap-4">
-                <a href="#projects" class="bg-brand-accent text-brand-dark font-semibold px-6 py-3 rounded-lg hover:bg-brand-accentDark transition">
-                    View Capstone Project
-                </a>
-                <a href="#contact" class="border border-slate-700 bg-brand-card font-semibold px-6 py-3 rounded-lg hover:border-brand-accent transition">
-                    Get in Touch
-                </a>
-            </div>
-        </div>
-    </section>
 
-    <!-- About / Core Competencies -->
-    <section id="about" class="py-20 border-t border-slate-800 px-6 max-w-5xl mx-auto">
-        <h2 class="text-2xl font-bold text-white mb-8 flex items-center gap-2">
-            <span class="text-brand-accent">01.</span> Core Competencies
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-brand-card p-6 rounded-xl border border-slate-800 hover:border-brand-accent/40 transition">
-                <div class="text-brand-accent text-2xl mb-3">🛡️</div>
-                <h3 class="text-lg font-bold text-white mb-2">Security-First Mindset</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    Practical awareness of authentication flows, bcrypt password hashing, and user role access controls to prevent system vulnerabilities.
-                </p>
-            </div>
-            <div class="bg-brand-card p-6 rounded-xl border border-slate-800 hover:border-brand-accent/40 transition">
-                <div class="text-brand-accent text-2xl mb-3">🖥️</div>
-                <h3 class="text-lg font-bold text-white mb-2">UI/UX & End-User Perspective</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    Aptitude for translating user workflows into intuitive system layouts, making troubleshooting and technical support seamless.
-                </p>
-            </div>
-            <div class="bg-brand-card p-6 rounded-xl border border-slate-800 hover:border-brand-accent/40 transition">
-                <div class="text-brand-accent text-2xl mb-3">📊</div>
-                <h3 class="text-lg font-bold text-white mb-2">Business Process Focus</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    Understands that security relies on knowing business logic. Skilled in tracking document flows, data analytics (Excel), and operational workflows.
-                </p>
-            </div>
-        </div>
-    </section>
+            <h2 class="text-xl md:text-3xl font-mono text-slate-400 mb-6 font-medium">
+                &gt; Graduating BSIT Student | Aspiring SOC / IT Trainee
+            </h2>
 
-    <!-- Featured Project -->
-    <section id="projects" class="py-20 border-t border-slate-800 px-6 max-w-5xl mx-auto">
-        <h2 class="text-2xl font-bold text-white mb-8 flex items-center gap-2">
-            <span class="text-brand-accent">02.</span> Featured Project
-        </h2>
-        
-        <div class="bg-brand-card rounded-xl border border-slate-800 p-8">
-            <div class="flex flex-wrap justify-between items-start gap-4 mb-4">
-                <div>
-                    <span class="text-xs font-bold text-brand-accent uppercase tracking-wider">Capstone Achievement</span>
-                    <h3 class="text-2xl font-bold text-white mt-1">Barangay Management Information & Document Tracking System</h3>
-                </div>
-                <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded-full text-xs font-semibold">
-                    🏆 2nd Place Awardee
-                </span>
-            </div>
-
-            <p class="text-slate-400 mb-6 leading-relaxed">
-                A full-system solution designed to streamline local government transactions, document issuance, and resident record management while maintaining high data privacy standards.
+            <p class="text-slate-400 text-base md:text-lg max-w-2xl mb-8 leading-relaxed">
+                A graduating Information Technology student eager to gain hands-on experience through <span class="text-cyber-blue font-semibold">On-the-Job Training (OJT)</span>. Possesses foundational web project experience and a strong passion to learn Security Operations Center (SOC) fundamentals, IT support, and cyber defense from industry professionals.
             </p>
 
-            <div class="space-y-3 mb-6 text-sm text-slate-300">
-                <div class="flex items-start gap-2">
-                    <span class="text-brand-accent">▹</span>
-                    <span><strong>Security Integration:</strong> Implemented bcrypt algorithm for secure password hashing and authentication protection.</span>
-                </div>
-                <div class="flex items-start gap-2">
-                    <span class="text-brand-accent">▹</span>
-                    <span><strong>User-Centric Design:</strong> Overhauled UI/UX based on feedback to ensure effortless navigation for non-technical administrative staff.</span>
-                </div>
-                <div class="flex items-start gap-2">
-                    <span class="text-brand-accent">▹</span>
-                    <span><strong>Transaction Tracking:</strong> Mapped end-to-end document lifecycle for complete integrity and traceability of public records.</span>
-                </div>
-            </div>
-
-            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
-                <span class="bg-brand-dark px-3 py-1 rounded border border-slate-800">Bcrypt</span>
-                <span class="bg-brand-dark px-3 py-1 rounded border border-slate-800">Authentication</span>
-                <span class="bg-brand-dark px-3 py-1 rounded border border-slate-800">UI/UX Redesign</span>
-                <span class="bg-brand-dark px-3 py-1 rounded border border-slate-800">Document Workflow</span>
+            <div class="flex flex-wrap gap-4 font-mono text-xs">
+                <a href="#projects" class="bg-cyber-blue text-black font-bold px-6 py-3.5 rounded-xl hover:bg-sky-400 transition flex items-center gap-2 shadow-[0_0_25px_rgba(56,189,248,0.25)]">
+                    <i class="bi bi-folder-symlink"></i> VIEW_SCHOOL_PROJECTS()
+                </a>
+                <a href="#contact" class="border border-slate-800 bg-cyber-card text-white font-semibold px-6 py-3.5 rounded-xl hover:border-cyber-blue transition flex items-center gap-2">
+                    <i class="bi bi-envelope"></i> GET_IN_TOUCH()
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Certifications -->
-    <section id="certifications" class="py-20 border-t border-slate-800 px-6 max-w-5xl mx-auto">
-        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-            <span class="text-brand-accent">03.</span> Certifications & Training
-        </h2>
-
-        <!-- JS Filter Buttons -->
-        <div class="flex gap-2 mb-8" id="cert-filters">
-            <button class="filter-btn active-filter px-4 py-1.5 rounded-lg text-xs font-semibold bg-brand-accent text-brand-dark transition" data-filter="all">All</button>
-            <button class="filter-btn px-4 py-1.5 rounded-lg text-xs font-semibold bg-brand-card text-slate-400 hover:text-white border border-slate-800 transition" data-filter="security">Security</button>
-            <button class="filter-btn px-4 py-1.5 rounded-lg text-xs font-semibold bg-brand-card text-slate-400 hover:text-white border border-slate-800 transition" data-filter="data">Data & Tech</button>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="cert-grid">
-            <!-- DICT Cert -->
-            <div class="cert-card bg-brand-card p-6 rounded-xl border border-slate-800 flex justify-between items-center" data-category="security">
-                <div>
-                    <h3 class="font-bold text-white">Cybersecurity for Everyone</h3>
-                    <p class="text-xs text-slate-400 mt-1">Department of Information and Communications Technology (DICT Region IV-A)</p>
-                    <span class="inline-block mt-3 text-xs text-brand-accent bg-brand-accent/10 px-2 py-0.5 rounded border border-brand-accent/20">Issued: September 2026</span>
-                </div>
+    <!-- SECTION 2: PROFILE & ATTITUDE -->
+    <section id="about" class="relative z-10 py-20 px-6 border-t border-slate-900 bg-cyber-black/50">
+        <div class="max-w-5xl mx-auto">
+            <div class="mb-12">
+                <h2 class="text-2xl md:text-3xl font-mono font-bold text-white mb-2 flex items-center gap-2">
+                    <span class="text-cyber-blue">01.</span> OJT_PROFILE_&_ATTITUDE
+                </h2>
+                <p class="text-slate-400 text-sm font-mono">// WHAT I BRING TO THE TEAM</p>
             </div>
 
-            <!-- HP LIFE Cert -->
-            <div class="cert-card bg-brand-card p-6 rounded-xl border border-slate-800 flex justify-between items-center" data-category="security">
-                <div>
-                    <h3 class="font-bold text-white">Cybersecurity Awareness</h3>
-                    <p class="text-xs text-slate-400 mt-1">HP LIFE Training Program</p>
-                    <span class="inline-block mt-3 text-xs text-slate-400 bg-brand-dark px-2 py-0.5 rounded border border-slate-800">Completed</span>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-cyber-card p-6 rounded-2xl border border-cyber-cardBorder hover:border-cyber-blue/40 transition duration-300">
+                    <div class="w-12 h-12 bg-cyber-blue/10 text-cyber-blue rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="bi bi-lightning-charge-fill"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Eager to Learn</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Highly motivated to learn industry tools, SOC workflows, and IT infrastructure from senior mentors and supervisors.
+                    </p>
                 </div>
-            </div>
 
-            <!-- Data Analytics -->
-            <div class="cert-card bg-brand-card p-6 rounded-xl border border-slate-800 flex justify-between items-center" data-category="data">
-                <div>
-                    <h3 class="font-bold text-white">Data Analytics (Excel)</h3>
-                    <p class="text-xs text-slate-400 mt-1">Professional Upskilling</p>
-                    <span class="inline-block mt-3 text-xs text-slate-400 bg-brand-dark px-2 py-0.5 rounded border border-slate-800">Completed</span>
+                <div class="bg-cyber-card p-6 rounded-2xl border border-cyber-cardBorder hover:border-cyber-blue/40 transition duration-300">
+                    <div class="w-12 h-12 bg-cyber-blue/10 text-cyber-blue rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="bi bi-code-square"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Web Application Foundation</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Experienced in building basic full-stack academic web systems using PHP, MySQL, and Tailwind CSS.
+                    </p>
                 </div>
-            </div>
 
-            <!-- UI/UX Training -->
-            <div class="cert-card bg-brand-card p-6 rounded-xl border border-slate-800 flex justify-between items-center" data-category="data">
-                <div>
-                    <h3 class="font-bold text-white">UI/UX Fundamentals</h3>
-                    <p class="text-xs text-slate-400 mt-1">Webinar & Practical Design</p>
-                    <span class="inline-block mt-3 text-xs text-slate-400 bg-brand-dark px-2 py-0.5 rounded border border-slate-800">Completed</span>
+                <div class="bg-cyber-card p-6 rounded-2xl border border-cyber-cardBorder hover:border-cyber-blue/40 transition duration-300">
+                    <div class="w-12 h-12 bg-cyber-blue/10 text-cyber-blue rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="bi bi-shield-heart"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Security Awareness Interest</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Strong personal interest in cybersecurity, human threat awareness (anti-phishing), and basic network safety.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section id="contact" class="py-20 border-t border-slate-800 px-6 max-w-5xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-white mb-2">Let's Connect</h2>
-        <p class="text-slate-400 max-w-md mx-auto mb-8 text-sm">
-            Open for IT Support roles, Helpdesk Analyst positions, and Junior Security Operations tracks.
-        </p>
+    <!-- SECTION 3: ACADEMIC PROJECTS -->
+    <section id="projects" class="relative z-10 py-20 px-6 border-t border-slate-900">
+        <div class="max-w-5xl mx-auto">
+            <div class="mb-12">
+                <h2 class="text-2xl md:text-3xl font-mono font-bold text-white mb-2 flex items-center gap-2">
+                    <span class="text-cyber-blue">02.</span> ACADEMIC_PROJECTS
+                </h2>
+                <p class="text-slate-400 text-sm font-mono">// COLLEGE CAPSTONE & WEB SYSTEM OUTPUTS</p>
+            </div>
 
-        <form id="contact-form" class="max-w-md mx-auto text-left space-y-4">
-            <div>
-                <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Name</label>
-                <input type="text" id="name" class="w-full bg-brand-card border border-slate-800 rounded-lg px-4 py-3 text-slate-200 focus:outline-none focus:border-brand-accent transition" placeholder="Your Name">
-            </div>
-            <div>
-                <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Email</label>
-                <input type="email" id="email" class="w-full bg-brand-card border border-slate-800 rounded-lg px-4 py-3 text-slate-200 focus:outline-none focus:border-brand-accent transition" placeholder="your.email@example.com">
-            </div>
-            <div>
-                <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Message</label>
-                <textarea id="message" rows="4" class="w-full bg-brand-card border border-slate-800 rounded-lg px-4 py-3 text-slate-200 focus:outline-none focus:border-brand-accent transition" placeholder="Write your message..."></textarea>
-            </div>
-            <button type="submit" class="w-full bg-brand-accent text-brand-dark font-bold py-3 rounded-lg hover:bg-brand-accentDark transition">
-                Send Message
-            </button>
-            <p id="form-status" class="text-xs text-center mt-2 hidden"></p>
-        </form>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="bg-cyber-card rounded-2xl border border-cyber-cardBorder p-6 flex flex-col justify-between hover:border-cyber-blue/30 transition">
+                    <div>
+                        <span class="bg-amber-500/10 text-amber-400 border border-amber-500/30 px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold inline-block mb-3">
+                            <i class="bi bi-trophy-fill"></i> 2nd Place Capstone
+                        </span>
+                        <h3 class="text-lg font-bold text-white mb-2">LabayoMIS</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            Barangay document tracking and information management system built for municipal record processing.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 text-[10px] font-mono text-slate-400 mb-4">
+                            <span class="bg-black px-2 py-0.5 rounded border border-slate-800">PHP</span>
+                            <span class="bg-black px-2 py-0.5 rounded border border-slate-800">MySQL</span>
+                            <span class="bg-black px-2 py-0.5 rounded border border-slate-800">Tailwind</span>
+                        </div>
+                        <a href="https://bmis.freepage.cc" target="_blank" rel="noopener noreferrer" class="block text-center bg-cyber-blue/10 text-cyber-blue hover:bg-cyber-blue hover:text-black py-2 rounded-lg text-xs font-mono font-bold transition">
+                            VIEW_PROJECT <i class="bi bi-box-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>
 
-        <footer class="mt-20 text-xs text-slate-600">
-            © 2026 Built for IT Support to SOC Analyst Career Transition.
-        </footer>
+                <!-- Project 2 -->
+                <div class="bg-cyber-card rounded-2xl border border-cyber-cardBorder p-6 flex flex-col justify-between hover:border-cyber-blue/30 transition">
+                    <div>
+                        <span class="bg-blue-500/10 text-blue-400 border border-blue-500/30 px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold inline-block mb-3">
+                            Final Exam Project
+                        </span>
+                        <h3 class="text-lg font-bold text-white mb-2">TechGear Portal</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            E-commerce web portal project featuring computer item browsing, cart management, and order forms.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 text-[10px] font-mono text-slate-400 mb-4">
+                            <span class="bg-black px-2 py-0.5 rounded border border-slate-800">PHP</span>
+                            <span class="bg-black px-2 py-0.5 rounded border border-slate-800">MySQL</span>
+                            <span class="bg-black px-2 py-0.5 rounded border border-slate-800">Tailwind</span>
+                        </div>
+                        <a href="https://shoppp.freehosting.dev" target="_blank" rel="noopener noreferrer" class="block text-center bg-cyber-blue/10 text-cyber-blue hover:bg-cyber-blue hover:text-black py-2 rounded-lg text-xs font-mono font-bold transition">
+                            VIEW_PROJECT <i class="bi bi-box-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-cyber-card rounded-2xl border border-cyber-cardBorder p-6 flex flex-col justify-between hover:border-cyber-blue/30 transition">
+                    <div>
+                        <span class="bg-purple-500/10 text-purple-400 border border-purple-500/30 px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold inline-block mb-3">
+                            Coursework Project
+                        </span>
+                        <h3 class="text-lg font-bold text-white mb-2">F&B Ordering System</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            Food and beverage ordering web application created for basic menu and order queue tracking.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 text-[10px] font-mono text-slate-400 mb-4">
+                            <span class="bg-black px-2 py-0.5 rounded border border-slate-800">PHP</span>
+                            <span class="bg-black px-2 py-0.5 rounded border border-slate-800">MySQL</span>
+                            <span class="bg-black px-2 py-0.5 rounded border border-slate-800">Tailwind</span>
+                        </div>
+                        <a href="https://fandb.fwh.is" target="_blank" rel="noopener noreferrer" class="block text-center bg-cyber-blue/10 text-cyber-blue hover:bg-cyber-blue hover:text-black py-2 rounded-lg text-xs font-mono font-bold transition">
+                            VIEW_PROJECT <i class="bi bi-box-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- External JavaScript -->
-    <script src="script.js"></script>
+    <!-- SECTION 4: SKILLS & GOALS -->
+    <section id="skills" class="relative z-10 py-20 px-6 border-t border-slate-900 bg-cyber-black/50">
+        <div class="max-w-5xl mx-auto">
+            <div class="mb-12">
+                <h2 class="text-2xl md:text-3xl font-mono font-bold text-white mb-2 flex items-center gap-2">
+                    <span class="text-cyber-blue">03.</span> KNOWLEDGE_FOUNDATION_&_OJT_GOALS
+                </h2>
+                <p class="text-slate-400 text-sm font-mono">// CURRENT BASELINE & WHAT I WANT TO LEARN DURING OJT</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-cyber-card p-6 rounded-2xl border border-cyber-cardBorder">
+                    <h3 class="text-lg font-mono font-bold text-white mb-4 flex items-center gap-2">
+                        <i class="bi bi-check2-circle text-cyber-blue"></i> Baseline Knowledge
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-400 font-mono">
+                        <li class="flex items-center gap-2"><span class="text-cyber-blue">&gt;</span> Basic Web Development (PHP, HTML, CSS, JavaScript)</li>
+                        <li class="flex items-center gap-2"><span class="text-cyber-blue">&gt;</span> Relational Database CRUD Operations (MySQL)</li>
+                        <li class="flex items-center gap-2"><span class="text-cyber-blue">&gt;</span> Assisted Coding & Problem Solving with AI Tools</li>
+                        <li class="flex items-center gap-2"><span class="text-cyber-blue">&gt;</span> Basic Computer & Network Troubleshooting Concepts</li>
+                    </ul>
+                </div>
+
+                <div class="bg-cyber-card p-6 rounded-2xl border border-cyber-cardBorder">
+                    <h3 class="text-lg font-mono font-bold text-white mb-4 flex items-center gap-2">
+                        <i class="bi bi-arrow-up-right-circle text-cyber-blue"></i> Goals for OJT / Training
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-400 font-mono">
+                        <li class="flex items-center gap-2"><span class="text-cyber-blue">&gt;</span> Learn SOC Analyst Workflows & Incident Monitoring</li>
+                        <li class="flex items-center gap-2"><span class="text-cyber-blue">&gt;</span> Understand Network Security & Enterprise Operations</li>
+                        <li class="flex items-center gap-2"><span class="text-cyber-blue">&gt;</span> Practice Python Automation Scripting for Beginners</li>
+                        <li class="flex items-center gap-2"><span class="text-cyber-blue">&gt;</span> Adapt to Enterprise IT & Cybersecurity Environment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: LEARNING -->
+    <section id="certs" class="relative z-10 py-20 px-6 border-t border-slate-900">
+        <div class="max-w-5xl mx-auto">
+            <div class="mb-12">
+                <h2 class="text-2xl md:text-3xl font-mono font-bold text-white mb-2 flex items-center gap-2">
+                    <span class="text-cyber-blue">04.</span> COMPLETED_LEARNING_COURSES
+                </h2>
+                <p class="text-slate-400 text-sm font-mono">// INTRODUCTORY SEMINARS & ONLINE TRAININGS</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-cyber-card p-6 rounded-2xl border border-cyber-cardBorder flex justify-between items-center hover:border-cyber-blue/30 transition">
+                    <div>
+                        <h3 class="font-bold text-white text-lg">Cybersecurity for Everyone</h3>
+                        <p class="text-xs text-slate-400 mt-1">Department of Information and Communications Technology (DICT)</p>
+                        <span class="inline-block mt-4 text-xs font-mono text-cyber-blue bg-cyber-blue/10 px-3 py-1 rounded-lg border border-cyber-blue/20">COMPLETED</span>
+                    </div>
+                    <i class="bi bi-award text-cyber-blue text-4xl"></i>
+                </div>
+
+                <div class="bg-cyber-card p-6 rounded-2xl border border-cyber-cardBorder flex justify-between items-center hover:border-cyber-blue/30 transition">
+                    <div>
+                        <h3 class="font-bold text-white text-lg">Cybersecurity Awareness</h3>
+                        <p class="text-xs text-slate-400 mt-1">HP LIFE Program</p>
+                        <span class="inline-block mt-4 text-xs font-mono text-slate-400 bg-black px-3 py-1 rounded-lg border border-slate-800">COMPLETED</span>
+                    </div>
+                    <i class="bi bi-shield-check text-slate-600 text-4xl"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: CONTACT (WEB3FORMS INTEGRATED) -->
+    <section id="contact" class="relative z-10 py-20 px-6 border-t border-slate-900 bg-cyber-black/50">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-mono font-bold text-white mb-2">&lt;CONTACT_FOR_OJT/&gt;</h2>
+            <p class="text-slate-400 max-w-md mx-auto mb-8 text-sm">
+                Available for OJT / Internship roles in Security Operations Center (SOC), IT Support, Network Support, or Web Systems Development.
+            </p>
+
+            <form id="directGmailForm" autocomplete="off" class="bg-cyber-card p-6 md:p-8 rounded-2xl border border-cyber-cardBorder text-left space-y-4 w-full relative">
+                <!-- Web3Forms Access Key (Replace this with your key) -->
+                <input type="hidden" name="access_key" value="70c0c85a-9d85-4454-9dd8-3da4eb654d24">
+                <input type="hidden" name="subject" value="New OJT Inquiry / Portfolio Message">
+
+                <!-- Anti-Spam Bot Honeypot -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-mono font-semibold text-slate-400 uppercase tracking-wider mb-1">RECRUITER_NAME</label>
+                        <input type="text" name="name" maxlength="60" required class="w-full bg-black border border-slate-800 rounded-xl px-4 py-2.5 text-slate-200 text-sm focus:outline-none focus:border-cyber-blue transition" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-mono font-semibold text-slate-400 uppercase tracking-wider mb-1">COMPANY_EMAIL</label>
+                        <input type="email" name="email" maxlength="80" required class="w-full bg-black border border-slate-800 rounded-xl px-4 py-2.5 text-slate-200 text-sm focus:outline-none focus:border-cyber-blue transition" placeholder="name@company.com">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-mono font-semibold text-slate-400 uppercase tracking-wider mb-1">MESSAGE_OR_OJT_DETAILS</label>
+                    <textarea name="message" rows="4" maxlength="500" required class="w-full bg-black border border-slate-800 rounded-xl px-4 py-2.5 text-slate-200 text-sm focus:outline-none focus:border-cyber-blue transition" placeholder="Write message or OJT inquiry..."></textarea>
+                </div>
+
+                <div id="formFeedback" class="hidden text-xs font-mono p-3 rounded-lg"></div>
+
+                <button type="submit" id="submitBtn" class="w-full font-mono bg-cyber-blue text-black font-bold py-3.5 rounded-xl hover:bg-sky-400 transition shadow-[0_0_20px_rgba(56,189,248,0.2)]">
+                    SEND_MESSAGE()
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10 bg-black border-t border-slate-900 py-8 px-6 text-center font-mono text-xs text-slate-500">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                © 2026 Marx Josef Rodriguez. OJT Internship Portfolio.
+            </div>
+            <div class="flex space-x-6 text-slate-400">
+                <a href="#hero" class="hover:text-cyber-blue transition">BACK_TO_TOP</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Direct Gmail Form Script -->
+    <script>
+        document.getElementById('directGmailForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const feedback = document.getElementById('formFeedback');
+            const submitBtn = document.getElementById('submitBtn');
+            const formData = new FormData(this);
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'SENDING_TO_GMAIL...';
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    feedback.className = "text-xs font-mono p-3 rounded-lg bg-cyber-blue/10 text-cyber-blue border border-cyber-blue/30";
+                    feedback.textContent = "[✓] SUCCESS: Message sent directly to Gmail!";
+                    this.reset();
+                } else {
+                    feedback.className = "text-xs font-mono p-3 rounded-lg bg-red-500/10 text-red-400 border border-red-500/30";
+                    feedback.textContent = `[!] ERROR: ${result.message || 'Failed to send message.'}`;
+                }
+            } catch (error) {
+                feedback.className = "text-xs font-mono p-3 rounded-lg bg-red-500/10 text-red-400 border border-red-500/30";
+                feedback.textContent = "[!] ERROR: Network error. Please try again.";
+            } finally {
+                feedback.classList.remove('hidden');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'SEND_MESSAGE()';
+            }
+        });
+    </script>
 </body>
 </html>
